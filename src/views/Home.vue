@@ -40,10 +40,16 @@ export default {
         sourceUrl: `${getRootPath()}/labs/func-007/script.js`,
       },
       {
-        name: 'Prototype chain Цепочка прототипов',
+        name: 'Prototype chain. Цепочка прототипов',
         taskUrl: 'https://kodaktor.ru/g/proto_chain',
         resultUrl: '/proto-chain',
         sourceUrl: `${getRootPath()}/labs/proto-chain/script.js`,
+      },
+      {
+        name: 'Массив промисов',
+        taskUrl: 'https://kodaktor.ru/async_tasks',
+        resultUrl: '/promise-array',
+        sourceUrl: `${getRootPath()}/labs/promise-array/script.js`,
       },
     ],
   }),

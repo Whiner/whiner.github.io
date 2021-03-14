@@ -6,19 +6,32 @@
           <p class="pl-3 pt-1 mb-2 title">Лабораторная "{{ lab.name }}"</p>
         </v-col>
       </v-row>
-      <v-row dense class="mt-5">
-        <v-col cols="6">
-          <Button color="#238636" text="Задание" icon="mdi-file-document" :url="lab.taskUrl"/>
+      <v-row class="mt-5" justify="center">
+        <v-col cols="4">
+          <Button color="#238636"
+                  text="Задание"
+                  icon="mdi-file-document"
+                  class="mx-2"
+                  :url="lab.taskUrl"
+          />
         </v-col>
-      </v-row>
-      <v-row dense>
-        <v-col cols="6">
-          <Button color="#e3b341" text="Исходники" icon="mdi-file-cog" :url="lab.sourceUrl"/>
+
+        <v-col cols="4">
+          <Button color="#e3b341"
+                  text="Исходники"
+                  icon="mdi-file-cog"
+                  class="mx-2"
+                  :url="lab.sourceUrl"
+          />
         </v-col>
-      </v-row>
-      <v-row dense>
-        <v-col cols="6">
-          <Button color="#2b7489" text="Результат" icon="mdi-checkbox-marked" :url="lab.resultUrl"/>
+
+        <v-col cols="4">
+          <Button color="#2b7489"
+                  text="Результат"
+                  icon="mdi-checkbox-marked"
+                  class="mx-2"
+                  :url="lab.resultUrl"
+          />
         </v-col>
       </v-row>
     </v-container>

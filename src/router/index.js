@@ -14,6 +14,11 @@ const routes = [
     name: 'Prototype chain',
     component: () => import(/* webpackChunkName: "about" */ '../views/PrototypeChainComponent.vue'),
   },
+  {
+    path: '/promise-array',
+    name: 'Promise array',
+    component: () => import(/* webpackChunkName: "about" */ '../views/PromiseArray.vue'),
+  },
 ];
 
 const router = new VueRouter({
