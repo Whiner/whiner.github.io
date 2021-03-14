@@ -1,60 +1,55 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+  <v-app id="inspire">
+    <v-app-bar app>
+      <v-icon class="mr-5">mdi-alpha-s-circle</v-icon>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <v-toolbar-title>Shilenko Alexander's Page</v-toolbar-title>
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <v-container fluid>
+        <v-row>
+          <v-col v-for="lab in labs" :key="lab.name" cols="3">
+            <LabCard :lab="lab"></LabCard>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import LabCard from '@/components/LabCard.vue';
+import { getRootPath } from '@/utils/env-util';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    LabCard,
   },
 
   data: () => ({
-    //
+    labs: [
+      {
+        name: 'Введение в XSLT, XPath. Задание 1',
+        taskUrl: 'http://kodaktor.ru/sigma.pdf',
+        resultUrl: `${getRootPath()}/labs/xsl/task1/result.xml`,
+        sourceUrl: `${getRootPath()}/labs/xsl/task1/source.xsl`,
+      },
+      {
+        name: 'Введение в XSLT, XPath. Задание 2',
+        taskUrl: 'http://kodaktor.ru/svg.pdf',
+        resultUrl: `${getRootPath()}/labs/xsl/task2/result.xml`,
+        sourceUrl: `${getRootPath()}/labs/xsl/task2/source.xsl`,
+      },
+      {
+        name: 'FUNC-007 Рекурсивные функции',
+        taskUrl: 'https://kodaktor.ru/func_007',
+        resultUrl: `${getRootPath()}/labs/func-007/index.html`,
+        sourceUrl: `${getRootPath()}/labs/func-007/script.js`,
+      },
+    ],
   }),
 };
 </script>
