@@ -3,7 +3,18 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-const routes = [];
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue'),
+  },
+  {
+    path: '/proto-chain',
+    name: 'Prototype chain',
+    component: () => import(/* webpackChunkName: "about" */ '../views/PrototypeChainComponent.vue'),
+  },
+];
 
 const router = new VueRouter({
   mode: 'history',
